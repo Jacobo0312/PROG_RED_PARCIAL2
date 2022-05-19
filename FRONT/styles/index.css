@@ -1,0 +1,10 @@
+
+#candidateContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    flex-flow: wrap;
+    margin-top: 40px;
+    justify-content: space-evenly;
+
+}
