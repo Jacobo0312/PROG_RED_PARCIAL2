@@ -8,3 +8,13 @@
     justify-content: space-evenly;
 
 }
+
+.containerGraphic{
+    max-width: 1000px;
+    max-height: 700px;
+    margin: 0 auto;
+    padding: 20px;
+
+    
+}
+

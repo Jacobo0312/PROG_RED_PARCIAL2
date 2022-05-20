@@ -5,6 +5,7 @@ import * as bodyParser from "body-parser";
 
 //Routes
 import {candidateRouter} from "./routes/candidateRouter";
+import {resultsRouter}  from "./routes/resultsRouter";
 
 const app = express();
 dotenv.config();
@@ -19,8 +20,11 @@ app.use(bodyParser.json());
 
 //Routes
 app.use("/api/candidates", candidateRouter);
+app.use("/api/results", resultsRouter);
 
 
-app.listen(process.env.PORT, () => {
+const PORT=process.env.PORT || 3000;
+
+app.listen(PORT, () => {
 console.log("Node server started running");
 });

@@ -4,11 +4,12 @@ import { OkPacket, RowDataPacket } from "mysql2";
 
 //Find all
 export const findAll = (callback: Function) => {
-    let queryString = `SELECT * FROM parcial2.candidates order by id;`;
+    let queryString = `SELECT * FROM P09728_1_5.candidatesA00368502  order by id;`;
     db.query(queryString, (err, result) => {
         if (err) {
             callback(err);
         }
+        console.log(result);
         const candidates: Candidate[] = [];
         const rows = (<RowDataPacket>result);
 
@@ -28,6 +29,21 @@ export const findAll = (callback: Function) => {
         
 
 
+
+}
+
+
+//Register vote
+export const registerVote = (id: number, callback: Function) => {
+    let queryString = `UPDATE P09728_1_5.resultsA00368502 SET votes = votes + 1 WHERE id_candidate = ${id};`;
+    db.query(queryString, (err, result) => {
+        if (err) {
+            callback(err);
+        }
+        const data={"status":"success"};
+        callback(null, data);
+    }
+    )
 
 }
 
