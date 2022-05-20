@@ -54,13 +54,13 @@ const options = {
 
 
 const getResultsAPI = async () => {
-  let url = `http://localhost:3000/api/results/total`;
+  let url = `https://typescript-api-parcial2.herokuapp.com/api/results/total`;
   let response = await fetch(url, { method: 'GET' });
   let result = await response.json();
   total = result.data[0]['SUM(votes)'];
 
 
-  url = `http://localhost:3000/api/results`;
+  url = `https://typescript-api-parcial2.herokuapp.com/api/results`;
   response = await fetch(url, { method: 'GET' });
   results = await response.json();
 

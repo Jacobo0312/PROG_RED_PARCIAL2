@@ -50,7 +50,7 @@ class CandidateComponent{
     action(event){
    
         event.preventDefault();
-        let url = `http://localhost:3000/api/candidates/${this.candidate.id}/vote`;
+        let url = `https://typescript-api-parcial2.herokuapp.com/api/candidates/${this.candidate.id}/vote`;
         fetch(url, {method:'PUT'})
         .then(response => response.json())
         .then(data => {

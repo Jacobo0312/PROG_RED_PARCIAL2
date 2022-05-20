@@ -3,7 +3,7 @@ const candidateContainer = document.getElementById('candidateContainer');
 
 
 const getCandidatesAPI = async ()=>{
-    let url = `http://localhost:3000/api/candidates`;
+    let url = `https://typescript-api-parcial2.herokuapp.com/api/candidates`;
     let response = await fetch(url, {method:'GET'});
     let candidates = await response.json();
 
